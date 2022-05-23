@@ -1,5 +1,5 @@
 import { app } from './index';
-import request from 'supertest'
+import request from 'supertest';
 
 describe('GET /calculate', () => {
   test("should return 200 & valid response", async () => {

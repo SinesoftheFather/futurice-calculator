@@ -13,11 +13,7 @@ OR
 ```sh
 cd ./server && npm install && cd .. && cd ./client && npm install
 ```
-- To start backend and frontend, run:
-```sh
-cd ./server && npm run start:server && cd .. && cd ./client && npm run start:client
-```
-OR with Docker
+- To start backend and frontend with Docker, run:
 ```sh
 make start_docker
 ```

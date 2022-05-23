@@ -5,9 +5,6 @@ install: ## install everything
 rebuild: ## rebuild the local image
 	docker-compose build
 
-start_local: ## start locally
-	cd ./server && npm run start:server && cd .. && cd ./client && npm run start:client
-
 start_docker: ## start docker
 	docker-compose down
 	docker-compose up

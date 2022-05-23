@@ -7,10 +7,10 @@ export default class CalculatorController {
   private service = new CalculatorService();
 
   constructor(app: express.Application) {
-    // middleware for controller
-    this.router.use(function (req, next) {
-      console.log('Calculator controller :', req.originalUrl)
-      next
+    this.router.use(function (req, res, next) {
+      console.log('Calculator controller :', req.originalUrl);
+      console.log(res);
+      next()
     });
     this.initializeRoutes();
     app.use("/", this.router);
@@ -22,7 +22,6 @@ export default class CalculatorController {
 
   calculate = async (req: express.Request, res: express.Response) => {
     try {
-      //const query = req.params.query;
       let query: string = req.query.query.toString();
       console.log(req.query)
       const result: any = await this.service.calculate(query);

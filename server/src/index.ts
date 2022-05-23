@@ -15,15 +15,14 @@ if (!PORT) {
 
 export const app = express();
 
-app.use(cors());
+RegisterRoutes(app);
 
+app.use(cors());
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-RegisterRoutes(app);
-
-app.use(function (res: any) {
+app.use(function (res: express.Response) {
     res.status(404).send("Page not found. Check if server is running or check the request URL")
 })
 
