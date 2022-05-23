@@ -7,7 +7,7 @@ export default class CalculatorController {
   private service = new CalculatorService();
 
   constructor(app: express.Application) {
-    this.router.use(function (req, res, next) {
+    this.router.use(function (req, res: express.Response, next) {
       console.log('Calculator controller :', req.originalUrl);
       console.log(res);
       next()
