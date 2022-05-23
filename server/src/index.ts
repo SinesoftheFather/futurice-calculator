@@ -22,7 +22,7 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-app.use(function (res: express.Response) {
+app.get('*', function (req: any, res: express.Response) {
     res.status(404).send("Page not found. Check if server is running or check the request URL")
 })
 
